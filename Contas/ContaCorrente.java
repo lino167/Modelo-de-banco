@@ -6,6 +6,10 @@ public class ContaCorrente extends ContaBancaria implements Tributavel {
 
     private double taxaDeOperacao = 5.00;
     private double chequeEspecial = 500.00;
+    public double getValorImposto() {
+        return this.getSaldo()*0.01;
+    }
+   
     
     public ContaCorrente(int numero, double saldo, String cPF, String nome, LocalDateTime dataCadastro,
             LocalDateTime dataEncerramento, boolean ativo) {
@@ -14,7 +18,7 @@ public class ContaCorrente extends ContaBancaria implements Tributavel {
         
     }
 
-    
+
 
     public double getTaxaDeOperacao() {
         return taxaDeOperacao;
@@ -36,7 +40,7 @@ public class ContaCorrente extends ContaBancaria implements Tributavel {
     
     @Override
     public boolean sacar(double valor) {
-        double disponivel = this.chequeEspecial + this.saldo;
+        double disponivel = this.chequeEspecial + this.getSaldo();
         if(valor > disponivel) {
             System.out.println("Voçê não possui saldo disponível");
             return false;
@@ -73,16 +77,8 @@ public class ContaCorrente extends ContaBancaria implements Tributavel {
     }
 
 
-
-    
-    public double getValorImposto() {
-        return this.getSaldo()*0.01;
-    }
-
-
-
     @Override
     public double getSaldo() {
-        return saldo;
+        return getSaldo();
     }
 }

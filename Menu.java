@@ -101,7 +101,7 @@ public class Menu {
                 System.out.println("1- Depositar");
                 System.out.println("2- Sacar");
                 System.out.println("3- Transferir");
-                System.out.println("4- Gerar Relatório");
+                System.out.println("4- Gerar Relatório de contas");
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Digite a opção desejada: ");
                 opcao = scanner.nextInt();
@@ -145,7 +145,10 @@ public class Menu {
     }
     private  static void gerarRelatorio(){
         banco.mostrarDados();
+
     }
+
+
     }
     
 

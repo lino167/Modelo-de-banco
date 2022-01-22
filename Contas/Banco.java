@@ -11,6 +11,7 @@ public class Banco{
     private ArrayList <ContaBancaria> banco = new ArrayList<>();
     
     
+    
 
     public Banco(String nomeBanco){
         this.nomeBanco = nomeBanco;
@@ -104,14 +105,16 @@ public class Banco{
         return null;
     }
 
+    
+
 
     public void mostrarDados(){
         System.out.println(" -----------------------------------");
         System.out.println("| ***Clientes do Banco " + this.getNomeBanco() + "*** |  ");
         System.out.println(" -----------------------------------");
-
         for(ContaBancaria x : banco){
             x.mostrarDados();
+          
             System.out.println();
         }
      

@@ -66,7 +66,6 @@ public class ContaPoupanca extends ContaBancaria {
 
     @Override
     public double getSaldo() {
-        // TODO Auto-generated method stub
-        return saldo;
+        return getSaldo();
     }
 }

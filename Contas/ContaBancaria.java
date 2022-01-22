@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 
 public abstract class ContaBancaria implements Comparable<ContaBancaria> {
     private int numero;
-    protected double saldo;
+    private double saldo;
     private String CPF;
     private String nome;
     private LocalDateTime dataCadastro;

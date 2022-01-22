@@ -7,6 +7,9 @@ public class ContaSalario extends ContaBancaria implements Tributavel{
     private int diaAnversario;
     private double taxaDeJuros = 0.05;
     private double limite = 500.00;
+    public double getValorImposto() {
+        return this.getSaldo()*0.01;
+    }
     
      ContaSalario(int numero, double saldo, String cPF, String nome, LocalDateTime dataCadastro,
             LocalDateTime dataEncerramento, boolean ativo) {
@@ -15,7 +18,7 @@ public class ContaSalario extends ContaBancaria implements Tributavel{
     }
     
     public double getSaldo() {
-        return this.saldo + this.taxaDeJuros*this.saldo;
+        return this.getSaldo() + this.taxaDeJuros*this.getSaldo();
     }
 
     @Override
@@ -54,7 +57,7 @@ public class ContaSalario extends ContaBancaria implements Tributavel{
     @Override
     public boolean depositar(double valor) {
         double deposito = valor;
-        this.setSaldo(this.getSaldo() + deposito * this.getValorImposto());
+        this.setSaldo(this.getSaldo() + deposito);
         return true;
     }
     
@@ -77,8 +80,6 @@ public class ContaSalario extends ContaBancaria implements Tributavel{
         return this.getNome().compareTo(o.getNome());
     }
     
-    public double getValorImposto() {
-        return this.getSaldo()*0.01;
-    }
+ 
 }
 
